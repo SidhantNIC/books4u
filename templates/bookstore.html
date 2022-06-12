@@ -1,0 +1,184 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123097">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>JGEC - Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College</title>
+<meta name=keywords content="JGEC, Jalpaiguri government engineering college, books4u, Aromatic Web Design Team">
+<meta name=description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement | Jalpaiguri Govt. Engineering College | Aromatic Web Design Team">
+<meta name=author content="Yash Sharma 9749522057">
+<meta property=og:title content="Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College"/>
+<meta property=og:description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement."/>
+<meta property=og:type content="article"/>
+<meta property=og:url content="http://www.aromaticwebdesign.com/s1"/>
+<meta property=og:image content="{% static 'http://www.aromaticwebdesign.com/s1/images/Books4u_logo.png' %}"/>
+<meta property=og:site_name content="www.aromaticwebdesign.com"/>
+<link rel=stylesheet href="{% static 'css/animate.min.css' %}">
+<link rel=stylesheet href="{% static 'css/bootstrap.min.css' %}">
+<link rel=stylesheet href="{% static 'css/font-awesome.min.css' %}">
+<link rel=stylesheet href="{% static 'css/style.css' %}">
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}" sizes=32x32 type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=72x72 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=120x120 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=180x180 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+<script src="{% static 'js/typed.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+</head>
+	<body oncontextmenu="return false" id="top">
+	    
+		<!-- start preloader -->
+		<div class="preloader">
+			<div class="sk-spinner sk-spinner-wave">
+                            <div class="sk-rect1"></div>
+                            <div class="sk-rect2"></div>
+                            <div class="sk-rect3"></div>
+                            <div class="sk-rect4"></div>
+                            <div class="sk-rect5"></div>
+                        </div>
+                </div>
+                <header>
+                        <div class=container>
+                        <div class=row>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <p><i class="fa fa-bank"></i><span>Jalpaiguri Government Engineering College</span></p>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                <p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, {{user.first_name}}</h4></span></p>
+                        </div>
+                        {% else %}
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                <p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, Welcome to books4u</h4></span></p>
+                        </div>
+                        </div>
+                        {% endif %}
+                        </div>
+                        
+                        </header>
+                                <!-- end header -->
+
+<!-- start navigation -->
+        <nav class="navbar navbar-default templatemo-nav" role="navigation">
+                <div class="container">
+                        <div class="navbar-header">
+                                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon icon-bar"></span>
+                                        <span class="icon icon-bar"></span>
+                                        <span class="icon icon-bar"></span>
+                                </button>
+                                <a href="/"><img src="{% static 'images/220px-Logo_of_JGEC.png' %}" style="height:80px;width:230px;padding-top:8px"/></a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="/"><i class='fa fa-home' aria-hidden='true'></i>&nbsp;Home</a></li>
+                                        
+                                        {% if user.is_authenticated %}
+                                        <li class="active"><a href="bookstore.html"><i class='fa fa-book' aria-hidden='true'></i>&nbsp;<b>Bookstore</b></a></li>
+                                        <li><a href="seller.html"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<b>Sell Books</b></a></li>
+                                        <li><a href="logout.html"><i class='fa fa-power-off' aria-hidden='true'></i>&nbsp;<b style="color: rgb(241, 30, 30);">Logout</b></a></li>
+                                        {% else %}
+                                        <li><a href="register.html"><i class='fa fa-user' aria-hidden='true'></i>&nbsp;Register</a></li>
+                                        <li><a href="login.html"><i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;<b style="color: rgb(63, 151, 41);">Login</b></a></li>
+                                        {% endif %}
+                                        
+                                        <li><a href=#contact><i class='fa fa-question' aria-hidden='true'></i>&nbsp;Help</a></li>
+                                        <li><a target=_blank href=feedback.html><i class='	fa fa-pencil-square-o' aria-hidden='true'></i>&nbsp;Feedback</a></li>
+                                        <li><a target=_blank href=tnc.php>T&AMP;C</a></li>
+                                        </ul>
+                                                                                                        </div>
+                </div>
+        </nav>
+<section id="contact">
+        <div class="container"">
+                <div class="row" >
+                        <!----------<div class="col-md-12" style="background-color: rgb(255, 255, 255);height:70px">
+                                <h2 style="color: rgb(0, 0, 0);"><i class="fa fa-book"></i> BOOKSTORE @ Books4u</h2>
+                        </div>------>
+                        
+                    
+<div class="container-fluid" style="background-color:rgb(255, 255, 255)">
+
+        <div id="products_box">
+                <form action="search.html" method="post">
+                {% csrf_token %}
+                <input name="srh" type="text" placeholder=" Search books here..." style="text-transform: none;height:40px;width:50%;margin-bottom:40px;height:33px">
+                <button type="submit" class="btn btn-success" style="margin-bottom: 8px;">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+        
+                <div class="line" style="width: 100%;background-color:rgb(226, 226, 226);height:1px">
+                </div>>
+                {% for data in datas %}
+                <div class="row" style="background-color: rgb(255, 255, 255);width:100%">
+                <div class="col-md-3">
+                        <div id = 'single_product'  style='width: 220px; padding-top: 10px;padding-bottom:30px'>
+                        <img src= "{{data.bimage.url}}" alt="" style='width:180px; height:220px;border:1px white dotted' class='w3-hover-opacity'>
+                </div>
+                </div>
+
+                <div class="col-md-5">
+                        <div id = 'single_product'  style='width: 220px; padding-top: 10px;padding-bottom: 10px'>
+                        <p style='color:rgb(0, 0, 0);text-align:left'><b style="color:rgb(230, 138, 0);font-size:20px">{{data.bname}}</b></p>
+                        <p style='color:rgb(97, 97, 97);font-size:15px;text-align:left'><b>Author-</b> {{data.bauthor}}</p>
+                        <p style='color:rgb(97, 97, 97);padding-bottom:10px;font-size:15px;text-align:left'><b>Book condition-</b> {{data.bcondition}}</p>
+                        <p style='color:rgb(199, 26, 26);padding-bottom:10px;font-size:20px;text-align:left'><i class="fa fa-inr" aria-hidden="true"></i> {{data.bprice}}/-</p>
+                        <p style='color:rgb(97, 97, 97);padding-bottom:10px;font-size:15px;text-align:left'><b>Description-</b> {{data.bdesc}}</p>
+
+                </div>
+                <div class="line" style="width: 100%;background-color:rgb(226, 226, 226);height:1px">
+                </div>>
+                
+                <div class="col-md-12" style="float:left;padding-top:10px">
+                        <p style='color:rgb(216, 9, 9);font-size:15px;text-align:left'><i class="fa fa-bars" aria-hidden="true"></i> <u>SELLER DETAILS</u></p>
+                        <p style='color:rgb(97, 97, 97);font-size:15px;text-align:left'><i class="fa fa-user" aria-hidden="true"></i> Seller FirstName- {{data.sfname}} {{data.slname}}</p>
+                        <p style='color:rgb(97, 97, 97);font-size:15px;text-align:left'><i class="fa fa-envelope" aria-hidden="true"></i> Seller Email- {{data.semail}}</p>
+                        <p style='color:rgb(97, 97, 97);font-size:15px;text-align:left'><i class="fa fa-phone" aria-hidden="true"></i> Seller Phone- +91 {{data.sphone}}</p>
+
+                </div>
+                </div>
+        </div>
+        
+        
+<div class="line" style="width: 100%;background-color:rgb(207, 207, 207);height:2px">
+</div>>
+        {% endfor %}
+
+</div>
+</div>
+
+
+
+
+
+                </div>
+        </div>
+</section>
+
+        <!-- end contact -->
+<footer id="footer">
+<div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+              <p><span style="color: red;font-size: 1.2em">© </span> Copyright 2018 <BR/>All Rights Reserved.</p>
+              <h6 style="color: green">Designed and implemented by <a style="text-shadow: 0.3em 0.3em 0.3em yellow;font-weight: bold;color: black" href="http://www.aromaticwebdesign.com" target="_blank">AromaticWebDesign</a></h6>
+          </div>
+         </div>
+      </div>
+    </div>
+
+  </footer>
+  
+</body>
+</html>                

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=Edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#123097">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>JGEC - Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College</title>
+        <meta name=keywords content="JGEC, Jalpaiguri government engineering college, books4u, Aromatic Web Design Team">
+        <meta name=description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement | Jalpaiguri Govt. Engineering College | Aromatic Web Design Team">
+        <meta name=author content="Yash Sharma 9749522057">
+        <meta property=og:title content="Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College"/>
+        <meta property=og:description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement."/>
+        <meta property=og:type content="article"/>
+        <meta property=og:url content="http://www.aromaticwebdesign.com/s1"/>
+        <meta property=og:image content="{% static 'http://www.aromaticwebdesign.com/s1/images/Books4u_logo.png' %}"/>
+        <meta property=og:site_name content="www.aromaticwebdesign.com"/>
+        <link rel=stylesheet href="{% static 'css/animate.min.css' %}">
+        <link rel=stylesheet href="{% static 'css/bootstrap.min.css' %}">
+        <link rel=stylesheet href="{% static 'css/font-awesome.min.css' %}">
+        <link rel=stylesheet href="{% static 'css/style.css' %}">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" sizes=32x32 type="image/x-icon"/>
+        <link rel=apple-touch-icon-precomposed href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+        <link rel=apple-touch-icon-precomposed sizes=72x72 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+        <link rel=apple-touch-icon-precomposed sizes=120x120 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+        <link rel=apple-touch-icon-precomposed sizes=180x180 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+        <script src="{% static 'js/typed.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        
+        
+        </head>
+            <body oncontextmenu="return false" id="top">
+		<!-- start preloader -->
+		<div class="preloader">
+			<div class="sk-spinner sk-spinner-wave">
+                            <div class="sk-rect1"></div>
+                            <div class="sk-rect2"></div>
+                            <div class="sk-rect3"></div>
+                            <div class="sk-rect4"></div>
+                            <div class="sk-rect5"></div>
+                        </div>
+                </div>
+                <header>
+                    <div class=container>
+                    <div class=row>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p><i class="fa fa-bank"></i><span>Jalpaiguri Government Engineering College</span></p>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, {{user.first_name}}</h4></span></p>
+                    </div>
+                    {% else %}
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, Welcome to books4u</h4></span></p>
+                    </div>
+                    </div>
+                    {% endif %}
+                    </div>
+                    
+                    </header>
+                            <!-- end header -->
+
+<!-- start navigation -->
+        <nav class="navbar navbar-default templatemo-nav" role="navigation">
+                <div class="container">
+                        <div class="navbar-header">
+                                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon icon-bar"></span>
+                                        <span class="icon icon-bar"></span>
+                                        <span class="icon icon-bar"></span>
+                                </button>
+                                <a href="/"><img src="{% static 'images/220px-Logo_of_JGEC.png' %}" style="height:80px;width:230px;padding-top:8px"/></a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/"><i class='fa fa-home' aria-hidden='true'></i>&nbsp;Home</a></li>
+                                
+                                {% if user.is_authenticated %}
+                                <li><a href="bookstore.html"><i class='fa fa-book' aria-hidden='true'></i>&nbsp;<b>Bookstore</b></a></li>
+                                <li class="active"><a href="seller.html"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<b>Sell Books</b></a></li>
+                                <li><a href="logout.html"><i class='fa fa-power-off' aria-hidden='true'></i>&nbsp;<b style="color: rgb(241, 30, 30);">Logout</b></a></li>
+                                {% else %}
+                                <li><a href="register.html"><i class='fa fa-user' aria-hidden='true'></i>&nbsp;Register</a></li>
+                                <li><a href="login.html"><i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;<b style="color: rgb(63, 151, 41);">Login</b></a></li>
+                                {% endif %}
+                                
+                                <li><a href=#contact><i class='fa fa-question' aria-hidden='true'></i>&nbsp;Help</a></li>
+                                <li><a target=_blank href=feedback.html><i class='	fa fa-pencil-square-o' aria-hidden='true'></i>&nbsp;Feedback</a></li>
+                                <li><a target=_blank href=tnc.php>T&AMP;C</a></li>
+                                </ul>
+                                                                                                                        </div>
+                </div>
+        </nav>
+<section id="contact">
+        <div class="container">
+                <div class="row">
+                        
+                        <div style="background-color: rgb(252, 251, 191)">
+                                {% for message in messages %}
+                                <h2 style="color:goldenrod">Oop's Something went wrong!</h2>
+                                <h3 style="color:rgb(248, 52, 52); text-align:center">{{message}}</h3>
+                                {% endfor %}
+                        </div>
+                
+                    <div class="col-md-6 col-sm-6 col-xs-12 wow bounceInRight" data-wow-offset="50" data-wow-delay="0.6s">
+                      <form action="seller.html" method="post" enctype="multipart/form-data">
+                        {% csrf_token%}
+        
+                        <h1 style="color:rgb(34, 143, 1)"><i class="fa fa-money" aria-hidden="true"></i> SELL YOUR OLD BOOKS </h1>
+
+                                <label style="color:#FFFF99;font-size:18px"><i class='fa fa-book' aria-hidden='true'></i> Book Name</label>
+                                <input type="text" name="bname" class="form-control" style="background-color: cornsilk;text-transform:none" placeholder="Enter Book name" required/>	
+                
+                                <label style="color:#FFFF99;font-size:18px"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Book Author</label>
+                                <input type="text" name="bauthor" class="form-control" style="background-color: cornsilk;text-transform:none" placeholder="Enter Book Author" required/>	
+                                
+                                <label style="color:#FFFF99;font-size:18px"><i class="fa fa-file-image-o" aria-hidden="true"></i> Book Photo</label>
+				<input type="file" name="bimage" placeholder="Upload Book Image" class="form-control text" required/>
+
+                                <label style="color:#FFFF99;font-size:18px"><i class="fa fa-book" aria-hidden="true"></i> Book Condition</label>
+                                <select class="form-control" name="bcondition" required>
+                                    <option value=""> Select book condition</option>
+                                     <option value="New">New</option>
+                                     <option value="Normal">Normal</option>
+                                     <option value="old">Old</option>
+                                </select>
+                                        
+                                <label style="color:#FFFF99;font-size:18px"><i class="fa fa-inr" aria-hidden="true"></i> Book Price</label>
+                                <input type="text" name="bprice" class="form-control" style="background-color: cornsilk;text-transform:none" placeholder="Enter Book Price" required/>	
+                                
+                                <label style="color:#FFFF99;font-size:18px"><i class='fa fa-bars' aria-hidden='true'></i> Book Description</label>
+                                <input type="text" name="bdesc" class="form-control" style="background-color: cornsilk;text-transform:none" placeholder="Describe something...." required/>	
+
+                                <input type="hidden" value="{{user.first_name}}" name="sfname" required>
+                                <input type="hidden" value="{{user.last_name}}" name="slname" required>
+                                <input type="hidden" value="{{user.email}}" name="semail" required>
+                                <input type="hidden" value="{{user.username}}" name="sphone" required>
+                                
+                         <input style="color: #fff;background-color:rgb(34, 119, 47)" type="submit" class="form-control">
+                         
+                         <h3 style="color:bisque">Don't have account? <a href="register.html">Register</a></h3>
+
+                     </form> 
+                        </div>
+             
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow bounceInLeft" data-wow-offset="50" data-wow-delay="0.6s">
+                            <address>
+                                    <p class="address-title">Things to know:</p>
+                                    <span>The price for your book will be based on the condition of your book.</span>
+                                    <span>Only books which are useful for college academic purpose will be valid</span>
+                                    <span>Loream ipsum was the king to defeat the jalpaiguri</span>
+                            </address>
+                         
+                        <address>
+                            <span><b style="text-transform: uppercase"> We provide our Services using a commercially reasonable level of skill and care and we hope that you will enjoy using them. By using our Services, you are agreeing to our <a href="#">T&AMP;C.</a></b></span>
+                         </address>
+                    </div>
+                
+
+                </div>
+        </div>
+</section>
+
+    <section id="portfolio">
+    <div class="container">
+            <div class="row">
+                  <div class="col-md-12">
+
+
+<br/>
+            </div>
+        </div>
+    </div>
+  </section>
+        <!-- end contact -->
+<footer id="footer">
+<div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+              <p><span style="color: red;font-size: 1.2em">© </span> Copyright 2018 <BR/>All Rights Reserved.</p>
+          </div>
+         </div>
+      </div>
+    </div>
+    
+  </footer>
+	</body>
+</html>     
+

@@ -1,0 +1,268 @@
+﻿{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123097">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>JGEC - Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College</title>
+<meta name=keywords content="JGEC, Jalpaiguri government engineering college, books4u, Aromatic Web Design Team">
+<meta name=description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement | Jalpaiguri Govt. Engineering College | Aromatic Web Design Team">
+<meta name=author content="Yash Sharma 9749522057">
+<meta property=og:title content="Books4u | An Online Book Portal | Jalpaiguri Govt. Engineering College"/>
+<meta property=og:description content="Books4u is a digital platform which helps you to buy or sell books as per your requirement."/>
+<meta property=og:type content="article"/>
+<meta property=og:url content="http://www.aromaticwebdesign.com/s1"/>
+<meta property=og:image content="{% static 'http://www.aromaticwebdesign.com/s1/images/Books4u_logo.png' %}"/>
+<meta property=og:site_name content="www.aromaticwebdesign.com"/>
+<link rel=stylesheet href="{% static 'css/animate.min.css' %}">
+<link rel=stylesheet href="{% static 'css/bootstrap.min.css' %}">
+<link rel=stylesheet href="{% static 'css/font-awesome.min.css' %}">
+<link rel=stylesheet href="{% static 'css/style.css' %}">
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}" sizes=32x32 type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=72x72 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=120x120 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<link rel=apple-touch-icon-precomposed sizes=180x180 href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+<script src="{% static 'js/typed.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+</head>
+<body id=top>
+ 
+<div class=preloader>
+<div class="sk-spinner sk-spinner-wave">
+<div class=sk-rect1></div>
+<div class=sk-rect2></div>
+<div class=sk-rect3></div>
+<div class=sk-rect4></div>
+<div class=sk-rect5></div>
+</div>
+</div>
+<header>
+<div class=container>
+<div class=row>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<p><i class="fa fa-bank"></i><span>Books4u where books and people meets</span></p>
+</div>
+{% if user.is_authenticated %}
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, {{user.first_name}}</h4></span></p>
+</div>
+{% else %}
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<p><span><h4 style="text-align: right;"><i class="fa fa-user"></i> Hello, Welcome to books4u</h4></span></p>
+</div>
+</div>
+{% endif %}
+</div>
+
+</header>
+<nav class="navbar navbar-default templatemo-nav" role=navigation>
+<div class=container>
+<div class=navbar-header>
+<button class=navbar-toggle data-toggle=collapse data-target=.navbar-collapse>
+<span class="icon icon-bar"></span>
+<span class="icon icon-bar"></span>
+<span class="icon icon-bar"></span>
+</button>
+<a href="/"><img src="{% static 'images/220px-Logo_of_JGEC.png' %}" style="height:80px;width:230px;padding-top:8px"/></a>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="active"><a href="/"><i class='fa fa-home' aria-hidden='true'></i>&nbsp;Home</a></li>
+
+{% if user.is_authenticated %}
+<li><a href="bookstore.html"><i class='fa fa-book' aria-hidden='true'></i>&nbsp;<b>Bookstore</b></a></li>
+<li><a href="seller.html"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<b>Sell Books</b></a></li>
+<li><a href="logout.html"><i class='fa fa-power-off' aria-hidden='true'></i>&nbsp;<b style="color: rgb(241, 30, 30);">Logout</b></a></li>
+{% else %}
+<li><a href="register.html"><i class='fa fa-user' aria-hidden='true'></i>&nbsp;Register</a></li>
+<li><a href="login.html"><i class='fa fa-sign-in' aria-hidden='true'></i>&nbsp;<b style="color: rgb(63, 151, 41);">Login</b></a></li>
+{% endif %}
+
+<li><a href=#contact><i class='fa fa-question' aria-hidden='true'></i>&nbsp;Help</a></li>
+<li><a target=_blank href=feedback.html><i class='	fa fa-pencil-square-o' aria-hidden='true'></i>&nbsp;Feedback</a></li>
+<li><a target=_blank href=tnc.php>T&AMP;C</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<section id=home>
+<div class=container>
+<div class=row>
+<div class="col-md-offset-2 col-md-8" style=text-align:center>
+	{% if user.is_authenticated %}
+	<h1 class="{% static 'wow fadeIn' %}" data-wow-offset=50 data-wow-delay=0.9s>You are in the right place</h1>
+	<h3 class="{% static 'wow fadeIn' %}" data-wow-offset=50 data-wow-delay=0.9s>Now you can sell and buy the books</h3>
+
+	{% else %}
+	<h1 class="{% static 'wow fadeIn' %}" data-wow-offset=50 data-wow-delay=0.9s>Welcome to<span> Books4u </span>Portal</h1>
+	<div class=element>
+		<div class=sub-element>A digital platform to buy and sell 2nd hand books.</div>
+		<div class=sub-element>Get 2nd hand books of all semesters.</div>
+		</div>
+		<a data-scroll href=register.html class="btn btn-success wow flip" data-wow-offset=50 data-wow-delay=0.6s>GET STARTED</a>
+	{% endif %}
+
+</div>
+</div>
+</div>
+</section>
+<section id=about>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<div id=vid>
+<img col-md-4 wow bounceIn src="{% static 'images/Gate-Material-books4u-jgec.jpg' %}" alt="Gate Materials available" class="img-responsive"/>
+</div>
+<br/><br/>
+<div style="background: #0000007d;border: 0.3em dashed white;padding: 1em;border-radius: 3em;text-align: center">
+<h3>CLICK TO REDIRECT <a target=_blank href=placement><img style="border:.13em inset white;border-radius:3em;padding:.1em;margin:.3em;width: 5.5em" src="{% static 'images/placement.png' %}" alt="Placement++"/></a><a target=_blank href=http://aromaticwebdesign.com/resume-plus-plus/index.php><img style="border:.13em inset yellow;border-radius:3em;padding:.1em;margin:.3em;width: 5.5em" src="{% static 'images/Resume.png' %}" alt="Resume++"/></a></h3>
+<i>A unit of Books4u JGEC</i>
+</div><br/>
+<h2 class="wow bounceIn" data-wow-offset=50 data-wow-delay=0.3s>ABOUT <span>Books4u</span></h2>
+<div class="col-md-12 wow" data-wow-offset=50 data-wow-delay=0.6s>
+<script>$(document).ready(function(){$(".toggle").hide()}),$(document).ready(function(){$(".raja a").click(function(){$("#aa").hide(),$(".toggle").show(700)})}),$(document).ready(function(){$("#bb a").click(function(){$(".toggle").hide(300),$("#aa").show(0)})});</script>
+<div id=aa class=raja>
+<a>Click to know More</a></div>
+<div class=toggle>
+<div class=media>
+<div class=media-heading-wrapper>
+<P class=media-heading>Not getting desired books on college library or from your friends for semester?? Or you want to sell your used books but not getting buyers, have you ever came across such a situation?? <span style=color:#9ff;font-weight:bold> Books4u </span> is the solution. "Books4u" is a digital platform which helps you to buy or sell books as per your requirement. By completing few steps below you will be able to do what you wish..So what are you waiting for...</P>
+<p><b></b></p>
+<div style=text-align:left>
+<p class=media-heading></p>
+<span style=color:#9ff;font-weight:bold> Let's start </span>
+
+</div>
+<ul>
+<li>Team Name</li>
+<li>Aromatic Web Team</li>
+</ul>
+<ul>
+<li>Person in charge</li>
+<li>Sudipto Ghosh, CR IT Dept.</li>
+<li>Sidhant Pradhan Newar</li>
+</ul>
+<ul>
+<li>Members</li>
+<li>Sanjay Jha | Kaushal Jain | Yash Sharma</li>
+</ul>
+<div style="margin:3em 0 0 0;background:white;color:black;padding:.3em">
+<b>DISCLAIMER</b>
+<p>It is important for you to know that Books4u has made priorities to support educational activities like the Jyoti A
+	 free Night Education Centre for Children run by students of our college that does so much to enrich the lives of poor students. 
+	 I want everybody in our college to know that we intend to continue this commitment & we all remain high in our priority for 
+	 the things we do to support the community “Centre of Social Welfare from many years to come.</p>
+</div>
+</div>
+</div>
+<div id=bb class=raja><br/>
+<a>View Less</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=service>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<h2 style="font-size:2.4em;padding-bottom:.9em;text-shadow:3px 3px 3px #00ccbc" class="wow bounceInDown" data-wow-offset=50 data-wow-delay=0.3s>Let's Get Started With<span> Books4u </span>NOW</h2>
+</div>
+<div class="col-md-4 wow bounceIn" data-wow-offset=50 data-wow-delay=0.3s>
+<i class="fa fa-book"></i>
+<h4>BOOK BUYER</h4>
+<p>Not getting books for next semester! Don't worry, We will help you out to get your desired books in very limited time period.</p>
+<p>Click the below link and get the book that you want at the best price</p>
+<a data-scroll href=bookstore.html class="btn btn-default wow wobble" data-wow-offset=50 data-wow-delay=0.6s>GET BOOKS</a>
+</div>
+<div class="col-md-4 wow bounceIn" data-wow-offset=50 data-wow-delay=0.3s>
+<i class="fa fa-newspaper-o"></i>
+<h4>BOOK SELLER</h4>
+<p>We assist book seller in delivering their books to the right book seeker in the most innovative and appropriate way.</p>
+<p>Sell us your books and get good price as per condition of the book. Only academic books are accepted.</p>
+<a data-scroll href=seller.html class="btn btn-default wow wobble" data-wow-offset=50 data-wow-delay=0.6s>SELL BOOKS</a>
+</div>
+<div class="col-md-4 wow bounceIn" data-wow-offset=50 data-wow-delay=0.3s>
+<i class="fa fa-pencil"></i>
+<h4>FEEDBACK</h4>
+<p>Please tell us what you think about "Books4u", your feedback is important to improve our services.</p>
+<p>We appreciate your feedback and will use it to evaluate changes and make improvements in our service.</p>
+<a data-scroll target=_blank href="feedback.php" class="btn btn-default wow wobble" data-wow-offset=50 data-wow-delay=0.6s>PROCEED</a>
+</div>
+</div>
+</div>
+</section>
+<section id=team>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+    
+<br/>
+</div>
+</div>
+</div>
+</section>
+<section id=contact>
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<h2 style="text-shadow:3px 3px 3px #00ccbc;font-size:2.7em" class="wow bounceIn" data-wow-offset=50 data-wow-delay=0.3s>CONTACT <span>Books4u</span></h2>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 wow bounceInUp" data-wow-offset=50 data-wow-delay=0.6s>
+<form action=form1.php method=post>
+<label>NAME</label>
+<input name=fullname placeholder="Your name" type=text class=form-control id=fullname required>
+<label>PHONE</label>
+<input type=tel placeholder="Your Phone" name=phone class=form-control id=phone pattern=[0-9]{10} required/>
+<label>MESSAGE</label>
+<textarea name=message placeholder="Type Message...." rows=4 class=form-control id=message required></textarea>
+<input style=color:#fff type=submit class=form-control>
+</form>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 wow bounceInLeft" data-wow-offset=50 data-wow-delay=0.6s>
+<address>
+<p class=address-title>OUR ADDRESS</p>
+<span>Feel free to talk to us any time at college campus.<br/> We are students of IT Department.</span>
+<p><i class="fa fa-phone"></i><a href="tel:9749522057"> +91-9749522057</a></p>
+<p><i class="fa fa-whatsapp"></i><a href="tel:8768065252"> +91-8768065252</a></p>
+<p><i class="fa fa-envelope-o"></i><a href="mailto:books4u.jgec@gmail.com"> books4u.jgec@gmail.com</a></p>
+</address>
+<center>
+<h3>STAY CONNECTED</h3>
+<ul class=social-icon>
+<li><a target=_blank href=https://www.facebook.com/Aromatic-Web-Designers-1541237669308955/ class="fa fa-facebook"></a></li>
+<li><a target=_blank href=https://plus.google.com/u/2/106218846336276486809 class="fa fa-google-plus"></a></li>
+<li><a target=_blank href=https://www.linkedin.com/in/books4u-jgec/ class="fa fa-linkedin"></a></li>
+</ul>
+</center>
+</div>
+</div>
+</div>
+</section>
+
+<footer id=footer>
+<div class=footer-bottom>
+<div class=container>
+<div class=row>
+<div class=col-sm-12>
+<p><span style=color:red;font-size:1.2em>©</span> Copyright 2018 <BR/>All Rights Reserved.</p>
+<h6 style=color:green>Designed and implemented by JGEC students.</h6>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
